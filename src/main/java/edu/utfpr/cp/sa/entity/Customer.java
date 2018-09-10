@@ -2,12 +2,33 @@ package edu.utfpr.cp.sa.entity;
 
 public class Customer {
 	
+        private int id;
 	private String name;
 	private String phone;
 	private int age;
 	private double creditLimit;
 	
 	private Country country;
+
+    public Customer() {
+    }
+
+    public Customer(int id, String name, String phone, int age, double creditLimit, Country country) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.age = age;
+        this.creditLimit = creditLimit;
+        this.country = country;
+    }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
 
 	public String getName() {
 		return name;

@@ -62,6 +62,7 @@ public class MainWindow extends JFrame {
 		btnCountryManagement.addActionListener(e -> new CountryWindow(countries));
 		contentPane.add(btnCountryManagement);
 		
+                
 		pack();
 	}
 
