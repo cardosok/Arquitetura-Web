@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.utfpr.cp.sa.business.CountryBusiness;
 import edu.utfpr.cp.sa.entity.Country;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class CountryController {
@@ -38,6 +39,22 @@ public class CountryController {
             c.setPhoneDigits(country.getPhoneDigits());
 
             countryBusiness.create(c);
+
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        
+
+        return "redirect:/country";
+    }
+    
+    @GetMapping ("/country/delete")
+    public String delete (CountryDTO country) {
+        try {
+            
+            System.out.println(country.getId());
+            
+            countryBusiness.delete(country.getId());
 
         } catch (Exception e) {
             //TODO: handle exception

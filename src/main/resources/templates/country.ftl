@@ -55,15 +55,19 @@
                         <th>Name</th>
                         <th>Acronym</th>
                         <th>Phone Digits</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                 <#list countryList as country>
                     <tr>
-                        <td>${country.id}</td>
-                        <td>${country.name}</td>
-                        <td>${country.acronym}</td>
-                        <td>${country.phoneDigits}</td>
+                        <td type="text" name="id" id="id">${country.id}</td>
+                        <td type="text" name="name" id="name">${country.name}</td>
+                        <td type="text" name="acronym" id="acronym">${country.acronym}</td>
+                        <td type="text" name="phoneDigits" id="phoneDigits">${country.phoneDigits}</td>
+                        <td>
+                            <a href="/country/delete?id = ${country.id}" type="submit" value="Delete" class="btn btn-danger"> Delete</a>
+                        </td>
                     </tr>
                 </#list>    
                 </tbody>
